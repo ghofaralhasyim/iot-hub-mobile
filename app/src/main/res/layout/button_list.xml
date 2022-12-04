@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="21px"
+        android:background="#F4F4F4">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="83px"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="#5B97B8"
+            android:padding="32px"
+            app:srcCompat="@drawable/wave_sound" />
+
+        <LinearLayout
+            android:layout_width="306dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="#FFFFFF"
+            android:paddingLeft="30px"
+            android:paddingTop="31px"
+            android:paddingBottom="31px">
+
+            <TextView
+                android:id="@+id/connTo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Connected : "
+                android:textSize="30px" />
+
+            <TextView
+                android:id="@+id/connDevice"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:text="Samsung S6"
+                android:textSize="30px" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/connRefresh"
+            android:layout_width="wrap_content"
+            android:layout_height="90px"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:maxWidth="18dp"
+            android:maxHeight="18dp"
+            android:src="@drawable/ic_refresh">
+        </ImageButton>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="51px">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="match_parent"
+                    android:layout_height="40pt"
+                    android:layout_margin="1pt"
+                    android:layout_weight="1"
+                    android:text="Button1"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:typeface="sans"
+                    app:backgroundTint="@color/white"
+                    android:textAllCaps="false"></Button>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+</LinearLayout>
