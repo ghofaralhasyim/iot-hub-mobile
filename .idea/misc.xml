@@ -3,8 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/activity_homepage.xml" value="0.1328125" />
+        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/activity_homepage.xml" value="0.18" />
         <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/choose_page.xml" value="0.33" />
+        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/project_list.xml" value="0.13177083333333334" />
+        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/layout/toolbar.xml" value="0.22" />
+        <entry key="..\:/FTI/IF634_IS534_MOBILE/workspaces/iot-hub-mobile/app/src/main/res/menu/menu.xml" value="0.33" />
       </map>
     </option>
   </component>
