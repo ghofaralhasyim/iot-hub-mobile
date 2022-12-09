@@ -22,6 +22,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -35,12 +36,16 @@ public class BluetoothDialog extends AppCompatActivity {
     private ListView lstvw;
     private ArrayAdapter aAdapter;
 
+    private Button connect;
+
     private BluetoothAdapter bAdapter = BluetoothAdapter.getDefaultAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bluetooth_dialog);
+
+//        connect = (Button) findViewById(R.id.connect);
 
         ImageButton btn = (ImageButton) findViewById(R.id.btSearch);
 
@@ -69,6 +74,18 @@ public class BluetoothDialog extends AppCompatActivity {
                 }
             }
         });
+
+        /*connect.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View arg0) {
+                BluetoothDevice device = ((MyAdapter) (listView.getAdapter())).getSelectedItem();
+                Intent intent = new Intent(getApplicationContext(), activity_controlling.class);
+                intent.putExtra(DEVICE_EXTRA, device);
+                intent.putExtra(DEVICE_UUID, mDeviceUUID.toString());
+                intent.putExtra(BUFFER_SIZE, mBufferSize);
+                startActivity(intent);
+            }
+        });*/
     }
 
     /*private void list() {

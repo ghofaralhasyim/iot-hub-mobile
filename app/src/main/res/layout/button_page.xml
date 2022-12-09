@@ -7,9 +7,40 @@
     android:layout_height="match_parent"
     tools:context=".Button">
 
-    <androidx.recyclerview.widget.RecyclerView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </androidx.recyclerview.widget.RecyclerView>
+        android:layout_height="wrap_content">
+        <com.google.android.flexbox.FlexboxLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap">
+            <Button
+                android:id="@+id/btButton"
+                android:layout_width="240px"
+                android:layout_height="240px"
+                android:layout_margin="1pt"
+                android:layout_weight="1"
+                android:text="Button1"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:backgroundTint="@color/white"
+                android:textAllCaps="false">
+            </Button>
+            <Button
+                android:id="@+id/btAddButton"
+                android:layout_width="240px"
+                android:layout_height="240px"
+                android:layout_margin="1pt"
+                android:layout_weight="1"
+                android:text="Add Button"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:typeface="sans"
+                app:backgroundTint="@color/white"
+                android:textAllCaps="false">
+            </Button>
+        </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
