@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -35,11 +36,13 @@ public class Button extends AppCompatActivity {
     private ImageButton btnRefresh;
     private TextView connDev;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.button_list);
+
+        Intent mainIntent = getIntent();
+        String projnamebttxt = mainIntent.getStringExtra("projectnamebt");
 
         recyclerView = findViewById(R.id.recyclerView);
 //        initArray();
