@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="360dp"
+    android:layout_height="160dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBaseline_toTopOf="parent"
+        android:orientation="vertical"
+        android:paddingRight="12dp"
+        android:padding="12dp"
+        android:paddingTop="64dp"
+        android:paddingBottom="64dp"
+        android:gravity="center">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/choose_page"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose connection type"
+                android:textSize="20sp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/grey"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="8dp"/>
+        </LinearLayout>
+
+        <com.google.android.flexbox.FlexboxLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:justifyContent="space_between"
+            app:showDivider="middle"
+            app:dividerDrawable="@drawable/flex_divider"
+            android:layout_marginTop="12dp">
+
+            <Button
+                android:id="@+id/btnBluetooth"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="Bluetooth"
+                android:textSize="11sp"
+                style="@style/button_dark"
+                />
+            <Button
+                android:id="@+id/btnApi"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:text="API Connection"
+                android:textSize="11sp"
+                style="@style/button_dark"
+                />
+
+        </com.google.android.flexbox.FlexboxLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
