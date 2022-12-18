@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "iot.umn.ac.id"
+        applicationId "id.ac.umn.iot"
         minSdk 25
         targetSdk 32
         versionCode 1
@@ -35,4 +35,22 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
+    implementation 'com.google.android.flexbox:flexbox:3.0.0'
+
+    def room_version = "2.2.6"
+    implementation "androidx.room:room-runtime:$room_version"
+    implementation "androidx.room:room-compiler:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+
+    implementation 'com.jjoe64:graphview:4.2.2'
+
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.2.1'
+    implementation 'com.google.code.gson:gson:2.10'
+
+    def lottieVersion = "5.2.0"
+    implementation "com.airbnb.android:lottie:$lottieVersion"
+
+    implementation 'com.google.guava:listenablefuture:9999.0-empty-to-avoid-conflict-with-guava'
 }

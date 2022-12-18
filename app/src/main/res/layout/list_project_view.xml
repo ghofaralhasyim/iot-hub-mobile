@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="64dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp"
+    android:paddingLeft="18dp"
+    android:paddingRight="18dp"
+    android:orientation="horizontal"
+    style="@style/rounded"
+    android:layout_marginTop="18dp">
+
+
+        <ImageView
+            android:id="@+id/iconProject"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:src="@drawable/ic_bluetooth"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            android:layout_marginLeft="18dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Text"
+                android:id="@+id/projectName"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth project connection"
+                android:id="@+id/projectDesc"
+                android:textSize="10sp"
+                android:textColor="@color/black"
+                android:layout_marginLeft="16dp"/>
+        </LinearLayout>
+
+</LinearLayout>

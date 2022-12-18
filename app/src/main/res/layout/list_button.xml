@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <Button
+        android:id="@+id/btnProject"
+        android:layout_width="78dp"
+        android:layout_height="78dp"
+        android:text="Add button"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:layout_marginBottom="12dp"
+        style="@style/rounded"
+        android:layout_marginRight="12dp"/>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

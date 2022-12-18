@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="iot.umn.ac.id">
+    package="id.ac.umn.iot">
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <permission android:name="android.permission.BLUETOOTH" android:label="BLUETOOTH" />
+    <permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -14,16 +28,30 @@
         android:theme="@style/Theme.Iothubmobile"
         tools:targetApi="31">
         <activity
-            android:name=".BTnew"
+            android:name="id.ac.umn.iot.ActivityMain"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name="id.ac.umn.iot.ActivityProjectSetup"
             android:exported="false" />
         <activity
-            android:name=".ApiNew"
+            android:name="id.ac.umn.iot.ActivityProjectBluetooth"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name="id.ac.umn.iot.ActivityProjectApi"
             android:exported="false" />
         <activity
-            android:name=".Homepage"
+            android:name="id.ac.umn.iot.ActivityProjectSetupGuide"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="id.ac.umn.iot.ActivityBTConnect"
+            android:exported="false" />
+        <activity
+            android:name="id.ac.umn.iot.ActivityBTButtonSetup"
+            android:exported="false" />
+        <activity
+            android:name="id.ac.umn.iot.Welcome"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
