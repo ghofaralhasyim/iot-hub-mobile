@@ -61,6 +61,7 @@ public class ActivityProjectApi extends AppCompatActivity {
                         GetDataApi getDataApi = (GetDataApi) response.body();
                         DataApi dataDevice = getDataApi.getData();
 
+                        graphView = findViewById(R.id.idGraphView);
                         DataPoint[] dataPoints = new DataPoint[dataDevice.getDataDeviceList().size()];
                         Integer index = 0;
 
@@ -73,7 +74,7 @@ public class ActivityProjectApi extends AppCompatActivity {
                             index++;
                         }
 
-                        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(dataPoints);
+                        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
                         graphView.setTitle("Data");
                         graphView.setTitleColor(R.color.purple_200);
                         graphView.setTitleTextSize(32);
@@ -82,7 +83,7 @@ public class ActivityProjectApi extends AppCompatActivity {
 
                     @Override
                     public void onFailure(Call<GetDataApi> call, Throwable t) {
-                        Toast.makeText(ActivityProjectApi.this, "We not find any data, had you send data yet?", Toast.LENGTH_LONG).show();
+                        Toast.makeText(ActivityProjectApi.this, t.toString(), Toast.LENGTH_LONG).show();
                     }
                 });
             }
