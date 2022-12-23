@@ -89,9 +89,7 @@ public class ActivityProjectSetupGuide extends AppCompatActivity {
                 if(token == null){
                     return;
                 }
-                Intent projectIntent = new Intent(ActivityProjectSetupGuide.this, ActivityProjectApi.class);
-                projectIntent.putExtra("project_name", projectName);
-                projectIntent.putExtra("device_token", token);
+                Intent projectIntent = new Intent(ActivityProjectSetupGuide.this, ActivityMain.class);
                 projectIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(projectIntent);
                 finish();

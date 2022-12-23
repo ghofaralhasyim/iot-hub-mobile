@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -45,6 +46,8 @@ public class ActivityProjectApi extends AppCompatActivity {
             projectTitle = extras.getString("project_name");
         }
 
+        Log.d("TAGGGG", extras.getString("device_token"));
+
         activityTitle = (TextView) findViewById(R.id.toolbarText);
         activityTitle.setText(projectTitle);
 
@@ -62,23 +65,25 @@ public class ActivityProjectApi extends AppCompatActivity {
                         DataApi dataDevice = getDataApi.getData();
 
                         graphView = findViewById(R.id.idGraphView);
-                        DataPoint[] dataPoints = new DataPoint[dataDevice.getDataDeviceList().size()];
-                        Integer index = 0;
+                        if(dataDevice.getDataDeviceList().size() > 0) {
+                            DataPoint[] dataPoints = new DataPoint[dataDevice.getDataDeviceList().size()];
+                            Integer index = 0;
 
-                        for(DataDevice data : dataDevice.getDataDeviceList()){
-                            if(data.getData() != null){
-                                dataPoints[index] = new DataPoint(index, Double.parseDouble(data.getData()));
-                            }else{
-                                dataPoints[index] = new DataPoint(index, 2);
+                            for (DataDevice data : dataDevice.getDataDeviceList()) {
+                                if (data.getData() != null) {
+                                    dataPoints[index] = new DataPoint(index, Double.parseDouble(data.getData()));
+                                } else {
+                                    dataPoints[index] = new DataPoint(index, 2);
+                                }
+                                index++;
                             }
-                            index++;
-                        }
 
-                        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
-                        graphView.setTitle("Data");
-                        graphView.setTitleColor(R.color.purple_200);
-                        graphView.setTitleTextSize(32);
-                        graphView.addSeries(series);
+                            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(dataPoints);
+                            graphView.setTitle("Data");
+                            graphView.setTitleColor(R.color.purple_200);
+                            graphView.setTitleTextSize(32);
+                            graphView.addSeries(series);
+                        }
                     }
 
                     @Override
@@ -100,5 +105,13 @@ public class ActivityProjectApi extends AppCompatActivity {
                 startActivity(projectIntent);
             }
         });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent projectIntent = new Intent(ActivityProjectApi.this, ActivityMain.class);
+        projectIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(projectIntent);
+        finish();
     }
 }

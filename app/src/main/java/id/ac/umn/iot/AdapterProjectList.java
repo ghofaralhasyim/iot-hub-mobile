@@ -55,6 +55,13 @@ public class AdapterProjectList extends RecyclerView.Adapter<AdapterProjectList.
             holder.projectDesc.setText("API project connection");
         }
 
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listener.onBtnClicked(data);
+            }
+        });
+
         holder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
             public boolean onLongClick(View view) {
@@ -78,26 +85,6 @@ public class AdapterProjectList extends RecyclerView.Adapter<AdapterProjectList.
             projectName=itemView.findViewById(R.id.projectName);
             iconProject=itemView.findViewById(R.id.iconProject);
             projectDesc=itemView.findViewById(R.id.projectDesc);
-
-            itemView.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v){
-                    int pos = getAdapterPosition();
-                    MainData data = dataList.get(pos);
-                    String projectType = data.getProjectType();
-
-                   if(projectType.equals("api")){
-                       Intent projectIntent = new Intent(context, ActivityProjectApi.class);
-                       projectIntent.putExtra("device_token", data.getDeviceToken());
-                       projectIntent.putExtra("project_name",data.getProjectName());
-                       context.startActivity(projectIntent);
-                   }else{
-                       Intent projectIntent = new Intent(context, ActivityProjectBluetooth.class);
-                       projectIntent.putExtra("parent_id", data.getID());
-                       context.startActivity(projectIntent);
-                   }
-                }
-            });
         }
     }
 }
