@@ -85,6 +85,21 @@ public class ActivityMain extends AppCompatActivity implements ProjectListListen
     }
 
     @Override
+    public void onBtnClicked(MainData data){
+        String projectType = data.getProjectType();
+        if(projectType.equals("api")){
+            Intent projectIntent = new Intent(ActivityMain.this, ActivityProjectApi.class);
+            projectIntent.putExtra("device_token", data.getDeviceToken());
+            projectIntent.putExtra("project_name",data.getProjectName());
+            startActivity(projectIntent);
+        }else{
+            Intent projectIntent = new Intent(ActivityMain.this, ActivityProjectBluetooth.class);
+            projectIntent.putExtra("parent_id", data.getID());
+            startActivity(projectIntent);
+        }
+    }
+
+    @Override
     public void onBtnLongClicked(MainData data) {
         dialogUpdate = new Dialog(ActivityMain.this);
         dialogUpdate.setContentView(R.layout.dialog_project_update);
